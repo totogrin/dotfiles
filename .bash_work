@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# aliases for work
+alias dmitryk='ssh -X -L 10022:10.0.0.120:22 -L 10080:10.0.0.120:80 -L 10830:10.0.0.120:830 metsys@dmitryk-2'
+alias suttlemgmt='ssh -X -L 10022:10.0.0.120:22 -L 10080:10.0.0.120:80 -L 10830:10.0.0.120:830 ubuntu@suttle-mgmt'
+alias testpc10='ssh -X -L 10022:10.0.0.120:22 -L 10080:10.0.0.120:80 -L 10830:10.0.0.120:830 user@test-pc-10'
+alias tunboard='ssh -X -L 10022:10.0.0.120:22 -L 10080:10.0.0.120:80 -L 10830:10.0.0.120:830 '
+alias sshboard='ssh -p 10022 root@localhost'
+alias mount_board='sshfs -p10022 root@localhost:/ /home/a.chigrin/local/board'
+alias set_root_bash="/local/DAP/trunk/tools/set_root.bash"
+
+#set_root_bash
+~/local/DAP/trunk/tools/scripts/svn-root.export.bash 

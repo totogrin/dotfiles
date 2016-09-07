@@ -1,12 +1,17 @@
 
 [alias]
-	hist = log --pretty=oneline -n 20 --graph --abbrev-commit
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" -n 20 --graph --abbrev-commit --date=short
 	st = status -s
 	go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
 	tags = tag -l
 	branches = branch -a 
 	remotes = remote -v
 	ammend = commit --amend
+	co = checkout
+	br = branch
+	type = cat-file -t
+    dump = cat-file -p
+	di = diff --color -w
 
 [apply]
 	whitespace = fix
@@ -36,6 +41,7 @@
 
 [diff]
 	renames = copies
+	tool = meld
 
 [diff "bin"]
 	textconv = hexdump -v -C
@@ -45,6 +51,7 @@
 
 [merge]
 	log = true
+	tool = meld
 
 [push]
 	default = matching
