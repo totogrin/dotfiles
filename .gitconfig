@@ -1,6 +1,6 @@
 
 [alias]
-	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" -n 20 --graph --abbrev-commit --date=short
+	hist = log --pretty=format:\"%C(blue)%ad%Creset %C(yellow)%h | %C(blue)%s %C(magenta) [%an]%Creset %C(green)%d%Creset \" -n 20 --graph --abbrev-commit --date=short
 	st = status -s
 	go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
 	tags = tag -l
@@ -15,6 +15,9 @@
 
 [apply]
 	whitespace = fix
+
+[format]
+pretty = format:%C(blue)%ad%Creset %C(yellow)%h%C(green)%d%Creset %C(blue)%s %C(magenta) [%an]%Creset
 
 [core]
 	excludesfile = ~/.gitignore, .gitignore
